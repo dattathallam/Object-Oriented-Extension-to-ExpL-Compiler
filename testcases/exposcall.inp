@@ -1,0 +1,13 @@
+decl
+	int a,b,val;
+	str s;
+enddecl
+int main()
+{
+	begin
+	val = exposcall("Read",-1,s);
+	val = exposcall("Write",-2,s);
+	
+	return 0;
+	end
+}

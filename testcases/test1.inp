@@ -1,0 +1,104 @@
+class
+	A {
+		int f1()
+		{
+			begin
+				write("In A f1");
+				return 0;
+			end
+		}
+
+		int f2()
+		{
+			decl
+				str x;
+			enddecl
+			begin
+				read(x);
+				write(x);
+				return 0;
+			end
+		}
+
+		int f3(int a,int b)
+		{
+			decl
+				int x;
+			enddecl
+			begin
+				write(a);
+				write(b);
+				read(x);
+				x = x+a;
+				x = x+b;
+				write(x);
+				return x;
+			end
+		}
+		int f4(int c)
+		{
+			decl
+				int s,d;
+			enddecl
+			begin
+				d = this.f3(c,2);
+				d = c + d;
+				write(d);
+				return d;
+			end
+		}
+	}
+	B extends A{
+			int f2(int x)
+			{
+				begin
+					write(x);
+					return 0;
+				end
+			}
+			int f3()
+			{
+				begin
+					write("In B f3");
+					return 0;
+				end
+			}
+			int f3(int a,int b)
+			{
+				begin
+					write("In B f3");
+					write(a);
+					write(b);
+					return 0;
+				end
+			}
+	}
+endclass
+decl
+	A var,var3;
+	B var2;
+enddecl
+int main()
+{
+	decl
+		int val,c;
+	enddecl
+	begin
+		val = initialize();
+		read(c);
+		if(c==1) then
+			var = alloc(A);
+		else if(c==2) then
+				var = alloc(B);
+			endif;
+		endif;
+
+		val = var.f2();
+		var2 = alloc(B);
+		val = var2.f3(c,24);
+		var3 = alloc(A);
+		write(c);
+		val = var3.f3(c,2);
+		return 0;
+	end
+}

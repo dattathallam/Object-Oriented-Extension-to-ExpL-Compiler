@@ -1,0 +1,34 @@
+class
+	A {
+		
+		int f1(int y,int z)
+		{
+			begin
+				write(y);
+				write(z);
+				return 20;
+			end
+		}
+	}
+		
+endclass
+
+decl
+	A var1;
+enddecl
+
+int main()
+{
+	decl
+		int val,a,b;
+	enddecl
+	begin
+		val = initialize();
+		var1 = alloc (A);
+		a = 4;
+		b = 5;
+		val = var1.f1(2,3);
+		val = var1.f1(a,b);
+		return 0;
+	end
+}

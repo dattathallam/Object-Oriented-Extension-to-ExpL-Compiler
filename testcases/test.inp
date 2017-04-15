@@ -1,0 +1,23 @@
+class
+  A {
+    int a;
+  }
+endclass
+
+decl
+  A var;
+enddecl
+
+int main()
+{
+  decl
+    int val;
+  enddecl
+  begin
+    val = initialize();
+      var = new A();
+   read(var.a);
+   write(var.a);
+    return 0;
+  end
+}
